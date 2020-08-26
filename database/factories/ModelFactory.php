@@ -3,6 +3,8 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\User;
+use App\Author;
+
 use Faker\Generator as Faker;
 
 /*
@@ -20,5 +22,16 @@ $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,
+    ];
+});
+
+$factory->define(Author::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name,
+        'email' => $faker->email,
+        'github'         =>    $faker->name,
+        'twitter' => $faker->name,
+        'location'=>  $faker->name,
+        'latest_article_published'=> $faker->name,
     ];
 });

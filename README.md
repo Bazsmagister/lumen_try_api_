@@ -1,14 +1,39 @@
 Lumen 7.2.1
+idea:
+https://auth0.com/blog/developing-restful-apis-with-lumen/
 
 composer global require "laravel/lumen-installer"
 
 lumen new lumentry
+or
+composer create-project --prefer-dist laravel/lumen lumentry
 
 php -S localhost:8000 -t public
 
 The next thing you should do after installing Lumen is set your application key to a random string. Typically, this string should be 32 characters long. The key can be set in the .env environment file. If you have not renamed the .env.example file to .env, you should do that now. If the application key is not set, your user encrypted data will not be secure!
 
 Since Lumen is a totally separate framework from Laravel, it does not intentionally offer compatibility with any additional Laravel libraries like Cashier, Passport, Scout, etc. If your application requires the functionality provided by these libraries, please use the Laravel framework.
+
+failure:
+Call to a member function connection() on null
+answer from SO:
+
+As per 2020 here is the check list to check against to fix this error.
+You have to:
+Create the database manually;
+Configure the database connection it in the .env file (i.e. set DB_CONNECTION, DB_DATABASE, DB_USERNAME, DB_PASSWORD);
+As per above answers uncomment $app->withFacades();, $app->withEloquent(); lines in bootstrap/app.php;
+If you use your Eloquent model within PHPUnit tests you have to boot the Lumen (or Laravel) first by adding the following line to your test class setUp() method:
+
+---
+
+    response() - global helper function that obtains an instance of the response factory
+    response()->json() - returns the response in JSON format.
+    200 - HTTP status code that indicates the request was successful.
+    201 - HTTP status code that indicates a new resource has just been created.
+    findOrFail - throws a ModelNotFoundException if no result is not found.
+
+---
 
 # Lumen PHP Framework
 
