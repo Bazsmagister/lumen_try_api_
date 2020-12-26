@@ -2,13 +2,22 @@ Lumen 7.2.1
 idea:
 https://auth0.com/blog/developing-restful-apis-with-lumen/
 
-composer global require "laravel/lumen-installer"
+`composer global require "laravel/lumen-installer"`
 
-lumen new lumentry
+`lumen new lumentry`
+
 or
-composer create-project --prefer-dist laravel/lumen lumentry
 
-php -S localhost:8000 -t public
+lumentry with laravel last (ATM 8):
+`composer create-project --prefer-dist laravel/lumen lumentry`
+
+lumentry with laravel 7:
+`composer create-project --prefer-dist laravel/lumen lumentry "7.*"`
+
+lumentry with laravel 6:
+`composer create-project --prefer-dist laravel/lumen lumentry "6.*"`
+
+`php -S localhost:8000 -t public`
 
 The next thing you should do after installing Lumen is set your application key to a random string. Typically, this string should be 32 characters long. The key can be set in the .env environment file. If you have not renamed the .env.example file to .env, you should do that now. If the application key is not set, your user encrypted data will not be secure!
 
@@ -32,6 +41,19 @@ If you use your Eloquent model within PHPUnit tests you have to boot the Lumen (
     200 - HTTP status code that indicates the request was successful.
     201 - HTTP status code that indicates a new resource has just been created.
     findOrFail - throws a ModelNotFoundException if no result is not found.
+
+---
+
+lumen's artisan:
+source:
+https://www.youtube.com/watch?v=FHXVs7swRuU
+
+no serve command
+no key:generate
+no tinker
+no .env?
+no down
+no vendor:publish
 
 ---
 

@@ -28,6 +28,17 @@
 
 
     </form>
+
+
+    <div>
+        <div>
+            <p>
+                Random 32 bit string:
+            </p>
+            {{ $random32bitstring }}
+            {{-- <a href="/generateAKey">generate a 32 long string key.</a> --}}
+        </div>
+    </div>
 </body>
 
 </html>

@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 /** @var \Laravel\Lumen\Routing\Router $router */
 
 /*
@@ -17,7 +19,12 @@ $router->get('/', function () use ($router) {
     // return $router->app->version();
     dump($router->app->version());
 
-    return view('form');
+    $random32bitstring = Str::random(32);
+    // dd($random32bitstring);
+
+    //return view('form');
+
+    return view('form', compact('random32bitstring'));
 });
 
 $router->get('user/{id}', 'UserController@show');
