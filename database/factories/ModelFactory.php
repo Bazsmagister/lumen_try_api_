@@ -6,6 +6,7 @@ use App\User;
 use App\Author;
 
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\Hash;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +18,25 @@ use Faker\Generator as Faker;
 | model instances for testing / seeding your application's database.
 |
 */
+//$value = 'adminadmin';
+//$password = Hash::make($value);
+//dd($password);
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->email,
+        'name' => 'Admin Adam',
+        'email' => 'admin@admin.com',
+        'password' =>  Hash::make('adminadmin')
+
     ];
 });
+
+// $factory->define(User::class, function (Faker $faker) {
+//     return [
+//         'name' => $faker->name,
+//         'email' => $faker->email,
+//     ];
+// });
 
 $factory->define(Author::class, function (Faker $faker) {
     return [

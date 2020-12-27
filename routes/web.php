@@ -41,3 +41,22 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 
     $router->put('authors/{id}', ['uses' => 'AuthorController@update']);
 });
+
+
+
+$router->group([
+    // 'middleware' => 'auth',
+    // 'prefix' => 'api'
+    //I think there is no api middleware
+     'middleware' => 'auth',
+    'prefix' => 'auth'
+], function () use ($router) {
+    // $router->post('login', 'AuthController@login');
+    // $router->post('logout', 'AuthController@logout');
+    // $router->post('refresh', 'AuthController@refresh');
+    // $router->post('me', 'AuthController@me');
+    $router->post('login', ['uses' =>'AuthController@login']);
+    $router->post('logout', ['uses' =>'AuthController@logout']);
+    $router->post('refresh', ['uses' =>'AuthController@refresh']);
+    $router->post('me', ['uses' =>'AuthController@me']);
+});

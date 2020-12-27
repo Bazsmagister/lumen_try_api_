@@ -8,16 +8,17 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Lumen\Auth\Authorizable;
 
+//added after jwt install: it is a contract, an interface so this class must implement 2 method of it.
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
-//added after jwt install:
-use Illuminate\Notifications\Notifiable;
+//added after jwt install: not needed?
+//use Illuminate\Notifications\Notifiable;
 
 class User extends Model implements AuthenticatableContract, AuthorizableContract, JWTSubject
 {
     use Authenticatable, Authorizable;
 
-    use Notifiable;
+    //use Notifiable;
 
     /**
      * The attributes that are mass assignable.

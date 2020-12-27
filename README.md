@@ -94,7 +94,14 @@ Firstly you need to implement the Tymon\JWTAuth\Contracts\JWTSubject contract on
 
 see the updated User model.
 
+// in laravel. but in lumen there are no config.
 Inside the config/auth.php file you will need to make a few changes to configure Laravel to use the jwt guard to power your application authentication.
+
+web.php:
+
+see chaanges
+
+make an authcontroller
 
 # Lumen PHP Framework
 
