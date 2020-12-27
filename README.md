@@ -57,6 +57,45 @@ no vendor:publish
 
 ---
 
+add JWT authentication:
+
+source:
+https://jwt-auth.readthedocs.io/en/stable/lumen-installation/
+
+composer require tymon/jwt-auth
+
+Add the following snippet to the bootstrap/app.php file under the providers section as follows:
+
+// Uncomment this line
+$app->register(App\Providers\AuthServiceProvider::class);
+
+// Add this line
+$app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
+
+Then uncomment the auth middleware in the same file:
+
+$app->routeMiddleware([
+'auth' => App\Http\Middleware\Authenticate::class,
+]);
+
+Generate secret key:
+
+I have included a helper command to generate a key for you:
+
+`php artisan jwt:secret`
+
+This will update your .env file with something like JWT_SECRET=foobar
+
+---
+
+Update your User model
+
+Firstly you need to implement the Tymon\JWTAuth\Contracts\JWTSubject contract on your User model, which requires that you implement the 2 methods getJWTIdentifier() and getJWTCustomClaims().
+
+see the updated User model.
+
+Inside the config/auth.php file you will need to make a few changes to configure Laravel to use the jwt guard to power your application authentication.
+
 # Lumen PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
