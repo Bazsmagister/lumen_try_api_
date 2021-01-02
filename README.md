@@ -129,6 +129,17 @@ see changes
 
 make an authcontroller
 
+---
+
+Sanctum:
+
+2020.05
+Sanctum is not supported for Lumen framework and can only be installed with Laravel Framework, as mentioned in this link https://github.com/laravel/sanctum/issues/134
+
+However, you can use jwt-auth package for API authentication https://github.com/tymondesigns/jwt-auth
+
+---
+
 # Lumen PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
