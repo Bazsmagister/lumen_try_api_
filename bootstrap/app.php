@@ -78,14 +78,20 @@ $app->configure('app');
 | route or middleware that'll be assigned to some specific routes.
 |
 */
-
+//originally commented:
 // $app->middleware([
 //     App\Http\Middleware\ExampleMiddleware::class
 // ]);
 
+$app->middleware([
+    App\Http\Middleware\LogQueries::class
+]);
+
+
 //This is originally commented. This should be uncomment if we want to use Authentication. f.e : JWT
 $app->routeMiddleware([
     'auth' => App\Http\Middleware\Authenticate::class,
+
 ]);
 
 /*

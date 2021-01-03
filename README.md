@@ -140,6 +140,18 @@ However, you can use jwt-auth package for API authentication https://github.com/
 
 ---
 
+Using Logqueries:
+
+https://lumen.laravel.com/docs/7.x/middleware#terminable-middleware
+
+https://stackoverflow.com/questions/65460459/how-log-all-queries-of-api-in-lumen-5-7/65460657?fbclid=IwAR2VjNlyrtu1i8XTAN_24vyNtz5KxQd3uO7gh8rNWPkn0AZBTkVLUbQkOjA#65460657
+
+1. create a middleware class
+
+2. Register in bootstrap/app.php
+
+3. check logfiles in storage/logs/lumen...
+
 # Lumen PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
